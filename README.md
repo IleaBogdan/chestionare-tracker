@@ -5,7 +5,7 @@ A simple code to keep track and get a random test for those who are taking the d
 ## Quick Setup (Windows CMD)
 
 Clone the repository:
-git clone https://github.com/IleaBogdan/chestionare-tracker.git
+git clone https://github.com/IleaBogdan/chestionare-tracker.git  
 cd chestionare-tracker
 
 ### Build C++ executable
