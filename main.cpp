@@ -25,14 +25,24 @@ void load(){
     }
 }
 int next_test(){
-    vector<pair<int,int>>last_scors;
-    for(int i=0;i<NC;++i)last_scors.push_back({i+1,scors[i].back()});
-    sort(last_scors.begin(),last_scors.end(),[](pair<int,int>p1,pair<int,int>p2){
-        if(p1.second!=p2.second)return p1.second<p2.second;
+    struct element{
+        int index, last_scor;
+        size_t scor_size;
+        element(int _index,int _last_scor,size_t _scor_size){
+            index=_index;
+            last_scor=_last_scor;
+            scor_size=_scor_size;
+        }
+    };
+    vector<element>last_scors;
+    for(int i=0;i<NC;++i)last_scors.push_back(element(i+1,scors[i].back(),scors[i].size()));
+    sort(last_scors.begin(),last_scors.end(),[](element p1,element p2){
+        if(p1.last_scor!=p2.last_scor)return p1.last_scor<p2.last_scor;
+        if(p1.scor_size!=p2.scor_size)return p1.scor_size<p2.scor_size;
         return rand()%14%2==0;
     });
-    //cout<<last_scors[0].second<<" - ";
-    return last_scors[0].first;
+    //cout<<last_scors[0].last_scor<<" - ";
+    return last_scors[0].index;
 }
 void update(int testNR,int newScore){
     --testNR;
