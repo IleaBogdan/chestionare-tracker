@@ -17,3 +17,6 @@ pyinstaller --onefile main.py --name trackerpy
 You'll find the executables under:
 - trackercpp.exe (in project folder)
 - dist\trackerpy.exe
+
+
+### Note: The next test function in both scripst is broken and I recommand not using it.
